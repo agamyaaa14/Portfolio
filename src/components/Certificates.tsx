@@ -27,7 +27,7 @@ const Certificates = () => {
       issuer: "Amazon Web Services",
       date: "Jul 2025",
       type: "Credly Badge",
-      credlyUrl: import.meta.env.VITE_AWS_BADGE_URL,
+      credlyUrl: "https://www.credly.com/badges/4c36dacd-2612-4653-96bf-40f4b11f7903/public_url",
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ const Certificates = () => {
       issuer: "Google Cloud",
       date: "Aug 2025",
       type: "Credly Badge",
-      credlyUrl: import.meta.env.VITE_GOOGLE_CLOUD_BADGE_URL,
+      credlyUrl: "https://www.credly.com/badges/c165baac-5af1-4a8a-a48b-33d57a717cad/public_url",
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ const Certificates = () => {
       issuer: "DataCamp",
       date: "2025",
       type: "Certificate",
-      credlyUrl: import.meta.env.VITE_DATACAMP_CERTIFICATE_URL,
+      credlyUrl: "https://drive.google.com/file/d/11nUubUDk8a7ak82V9ULxX53IVqhGX0i2/view?usp=drive_link",
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ const Certificates = () => {
       issuer: "ISRO",
       date: "2024",
       type: "Certificate",
-      credlyUrl: import.meta.env.VITE_ISRO_URL,
+      credlyUrl: "https://drive.google.com/file/d/1TD7Ko1mKrnXFtVtWjlCHvwZqYEm3m2wu/view?usp=drive_link",
     },
     {
       id: 5,
@@ -59,7 +59,7 @@ const Certificates = () => {
       issuer: "NPTEL",
       date: "2024",
       type: "Certificate",
-      credlyUrl: import.meta.env.VITE_ML_URL,
+      credlyUrl: "https://drive.google.com/file/d/1vG3S3lWNcEwEiNn8lkpLdrZBDnmjceqp/view?usp=drive_link",
     },
     {
       id: 6,
@@ -67,7 +67,7 @@ const Certificates = () => {
       issuer: "Infosys Springboard",
       date: "2024",
       type: "Certificate",
-      credlyUrl: import.meta.env.VITE_GENAI_URL,
+      credlyUrl: "https://drive.google.com/file/d/1rdp8ogouCW2xShclJyNwTU1P41X_Rghq/view?usp=drive_link",
     }
   ];
 

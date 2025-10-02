@@ -6,17 +6,17 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      url: import.meta.env.VITE_GITHUB_URL,
+      url: "https://github.com/agamyaaa14",
       label: 'GitHub',
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      url: import.meta.env.VITE_LINKEDIN_URL,
+      url: "https://www.linkedin.com/in/agamya-david",
       label: 'LinkedIn',
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      url: import.meta.env.VITE_EMAIL_URL,
+      url: "mailto:agu.david1410@gmail.com",
       label: 'Email',
     },
     {

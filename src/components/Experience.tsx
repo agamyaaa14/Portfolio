@@ -35,18 +35,6 @@ const Experience = () => {
     },
     {
       id: 2,
-      icon: <Database />,
-      company: 'Prasunet Foundation',
-      role: 'Data Science Intern',
-      duration: 'March 2025 – April 2025',
-      highlights: [
-        'Developed the ResaleRadar car price predictor from concept to deployment.',
-        'Achieved a high-accuracy R² score of 0.918 using a CatBoost regression model.',
-        'Designed and deployed an interactive Streamlit application for real-time predictions.',
-      ],
-    },
-    {
-      id: 3,
       icon: <BarChart3 />,
       company: 'CoLLearn',
       role: 'Sports Analytics Intern',
@@ -58,7 +46,7 @@ const Experience = () => {
       ],
     },
     {
-      id: 4,
+      id: 3,
       icon: <TrendingUp />,
       company: 'Excelerate',
       role: 'Data Analyst Associate',

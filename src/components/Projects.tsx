@@ -36,8 +36,8 @@ const Projects = () => {
       logo: studySqueezeLogo,
       description: 'AI study assistant that summarizes PDFs, PPTs, and DOCX into structured, exam-ready notes with mnemonic generation using Gemini API.',
       technologies: ['Python', 'Streamlit', 'ChromaDB', 'Llama 3', 'OpenRouter'],
-      githubUrl: import.meta.env.VITE_STUDYSQUEEZE_GITHUB_URL,
-      liveUrl: import.meta.env.VITE_STUDYSQUEEZE_LIVE_URL,
+      githubUrl: 'https://github.com/agamyaaa14/StudySqueeze',
+      liveUrl: "https://www.loom.com/share/79ff286b4f3d4973b10c95a8b08c424a?sid=68687e01-4630-4c88-b9c3-0ba6c1b8bc2a",
     },
     {
       id: 2,
@@ -46,8 +46,8 @@ const Projects = () => {
       logo: plotSmithLogo, 
       description: 'AI-powered story generator using Microsoft phi-4 model via Hugging Face API with genre-specific content and animated real-time outputs.',
       technologies: ['Python', 'Streamlit', 'Hugging Face', 'phi-4 Model', 'NLP'],
-      githubUrl: import.meta.env.VITE_PLOTSMITH_GITHUB_URL,
-      liveUrl: import.meta.env.VITE_PLOTSMITH_LIVE_URL,
+      githubUrl: 'https://github.com/agamyaaa14/PlotSmith',
+      liveUrl: "https://plotsmith.streamlit.app/",
     },
     {
       id: 3,
@@ -56,8 +56,8 @@ const Projects = () => {
       logo: resaleRadarLogo, 
       description: 'Used car price prediction web app using CatBoost regression model with 91.8% R² score, featuring interactive visualizations and user-friendly interface.',
       technologies: ['Python', 'Scikit-learn', 'Streamlit', 'CatBoost', 'Optuna'],
-      githubUrl: import.meta.env.VITE_RESALERADAR_GITHUB_URL,
-      liveUrl: import.meta.env.VITE_RESALERADAR_LIVE_URL,
+      githubUrl: 'https://github.com/agamyaaa14/ResaleRadar',
+      liveUrl: "https://resaleradar.streamlit.app/",
     },
     {
       id: 4,
@@ -66,8 +66,8 @@ const Projects = () => {
       logo: blushBotLogo,
       description: 'Personalized skincare recommendation system using content-based filtering with TF-IDF and Cosine Similarity, achieving 88% precision.',
       technologies: ['Python', 'Scikit-learn', 'Streamlit', 'TF-IDF', 'Cosine Similarity'],
-      githubUrl: import.meta.env.VITE_BLUSHBOT_GITHUB_URL,
-      liveUrl: import.meta.env.VITE_BLUSHBOT_LIVE_URL,
+      githubUrl: 'https://github.com/agamyaaa14/BlushBot',
+      liveUrl: "https://blushbot.streamlit.app/",
     },
   ];
 

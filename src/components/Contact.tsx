@@ -39,7 +39,7 @@ const Contact = () => {
     setIsSubmitting(true);
     setError('');
 
-    const formspreeEndpoint = process.env.REACT_APP_FORMSPREE_ENDPOINT;
+    const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
     if (!formspreeEndpoint) {
       setError("Contact form is currently unavailable.");
