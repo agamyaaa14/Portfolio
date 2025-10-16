@@ -21,8 +21,13 @@ const Footer = () => {
     },
     {
       icon: <img src="https://img.icons8.com/androidL/512/FFFFFF/tableau-software.png" alt="Tableau logo" className="w-5 h-5" />,
-      url: import.meta.env.VITE_TABLEAU_URL,
+      url: "https://public.tableau.com/app/profile/agamya.david",
       label: 'Tableau',
+    },
+    {
+      icon: <img src="https://img.icons8.com/?size=100&id=eJRkOYixqXNP&format=png&color=EBEBEB" alt="Credly logo" className="w-5 h-5" />,
+      url: "https://www.credly.com/users/agamya-david",
+      label: 'Credly',
     }
   ];
 
