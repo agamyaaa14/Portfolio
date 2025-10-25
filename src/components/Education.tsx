@@ -19,7 +19,7 @@ const Education = () => {
 
   const educationHistory = [
     {
-      institution: 'Global Academy of Technology, Bengaluru',
+      institution: 'Global Academy of Technology, Bengaluru, Karnataka',
       degree: 'B.E in Information Science & Engineering',
       duration: '2022 – 2026',
       gpa: 'CGPA: 9.55 / 10.0',
