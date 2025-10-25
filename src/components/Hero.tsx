@@ -4,7 +4,7 @@ import { User, Eye } from 'lucide-react';
 import profilePhoto from '../assets/profile.png';
 
 const Hero = () => {
-  const resumeUrl = import.meta.env.VITE_RESUME_URL;
+  const resumeUrl = "https://drive.google.com/file/d/1PsAPqWQ6UJChL-ojgjgVVRp4tiv-65_z/view?usp=sharing";
   const profilePhotoPlaceholder = profilePhoto;
 
   const openResume = () => {
