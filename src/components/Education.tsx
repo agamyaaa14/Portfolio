@@ -22,7 +22,7 @@ const Education = () => {
       institution: 'Global Academy of Technology, Bengaluru, Karnataka',
       degree: 'B.E in Information Science & Engineering',
       duration: '2022 – 2026',
-      gpa: 'CGPA: 9.55 / 10.0',
+      gpa: 'CGPA: 9.48 / 10.0',
     },
     {
       institution: 'Mount Carmel PU College',
@@ -77,7 +77,7 @@ const Education = () => {
               </p>
               <div className="mt-2 text-md" style={{ color: themeColors.subtleText }}>
                 <span>{edu.duration}</span>
-                {edu.gpa && <span> · {edu.gpa}</span>}
+                {edu.gpa && <span><span> ○ {edu.gpa}</span></span>}
               </div>
             </motion.div>
           ))}

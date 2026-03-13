@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -14,28 +13,36 @@ const Skills = () => {
     background: '#242423',
     cardBackground: 'rgba(51, 53, 51, 0.6)', // Semi-transparent card
     headingText: '#CFDBD5',
-    subtleText: '#A9A9A9',
+    bodyText: '#CFDBD5',
+    subtleText: '#CFDBD5',
     primary: '#FF006E',
   };
 
-  // UPDATED: Replaced all problematic logo links with stable, theme-appropriate versions.
-  const allSkills = [
-    { name: "Python", logo: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000" },
-    { name: "NumPy", logo: "https://img.icons8.com/?size=100&id=aR9CXyMagKIS&format=png&color=000000" },
-    { name: "Pandas", logo: "https://pandas.pydata.org//static/img/favicon_white.ico" },
-    { name: "Scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" },
-    { name: "Matplotlib", logo: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/4/matplotlib-icon-f7mzorjcj05050u32rdqcyy.png/matplotlib-icon-iodufaod59i61pudzd92.png?_a=DATAg1AAZAA0" },
-    { name: "Seaborn", logo: "https://cdn.worldvectorlogo.com/logos/seaborn-1.svg" },
-    { name: "TensorFlow", logo: "https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" },
-    { name: "Hugging Face", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
-    { name: "Streamlit", logo: "https://img.icons8.com/?size=100&id=Rffi8qeb2fK5&format=png&color=000000" },
-    { name: "FastAPI", logo: "https://cdn.worldvectorlogo.com/logos/fastapi-1.svg" },
-    { name: "CatBoost", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6OUcuhCagkvi4liseIW1jZeb7BzqcZ6VhZA&s" },
-    { name: "Git", logo: "https://cdn.iconscout.com/icon/free/png-256/free-git-icon-svg-download-png-1175218.png" },
-    { name: "JavaScript", logo: "https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" },
-    { name: "MERN Stack", logo: "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" },
-    { name: "SQL", logo: "https://img.icons8.com/?size=100&id=J6KcaRLsTgpZ&format=png&color=000000" },
-    { name: "AWS", logo:"https://svgmix.com/uploads/skillicons/29026e-aws-dark.svg"}
+  const skillCategories = [
+    {
+      heading: 'Languages',
+      skills: ['Python', 'C', 'JavaScript', 'SQL'],
+    },
+    {
+      heading: 'ML & DS',
+      skills: ['Scikit-learn', 'Pandas', 'NumPy', 'Feature Engineering', 'Model Evaluation', 'CatBoost'],
+    },
+    {
+      heading: 'Deep Learning / GenAI',
+      skills: ['TensorFlow', 'Hugging Face Transformers', 'OpenAI API', 'Prompt Engineering'],
+    },
+    {
+      heading: 'Visualization',
+      skills: ['Power BI (DAX, Query Merging)', 'Tableau', 'Looker Studio', 'Matplotlib', 'Seaborn'],
+    },
+    {
+      heading: 'Tools & Platforms',
+      skills: ['Git', 'Jupyter Notebook', 'Google Colab', 'VS Code', 'Excel (VBA)', 'FastAPI', 'Streamlit', 'MERN Stack'],
+    },
+    {
+      heading: 'Cloud',
+      skills: ['AWS', 'Google Cloud Vertex AI'],
+    },
   ];
 
   
@@ -68,32 +75,52 @@ const Skills = () => {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {allSkills.map((skill, index) => (
+          {skillCategories.map((category, index) => (
             <motion.div
-              key={skill.name}
+              key={category.heading}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.4 + (index * 0.05) }}
-              className="group relative flex flex-col items-center justify-center text-center p-4 rounded-xl transition-all duration-300"
+              transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="group p-6 rounded-2xl border transition-all duration-300"
               style={{ 
                 backgroundColor: themeColors.cardBackground,
                 backdropFilter: 'blur(10px)',
+                borderColor: themeColors.subtleText,
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.18)',
               }}
             >
-              <div className="h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-90">
-                  <img 
-                    src={skill.logo} 
-                    alt={`${skill.name} logo`} 
-                    className="max-h-10 max-w-full"
-                  />
-              </div>
-              <div className="absolute bottom-2 left-0 right-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="bg-[#242423] text-white text-xs font-semibold px-2 py-1 rounded-md">
-                  {skill.name}
-                </span>
-              </div>
+              <h3 className="text-xl font-semibold mb-4" style={{ color: themeColors.headingText }}>
+                {category.heading}
+              </h3>
+              <div className="h-0.5 w-10 mb-5 transition-all duration-300 group-hover:w-20" style={{ backgroundColor: themeColors.primary }} />
+              <ul className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <motion.li
+                    key={skill}
+                    whileHover={{ y: -2, scale: 1.04 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-sm px-3 py-1.5 rounded-full border transition-colors duration-200"
+                    style={{
+                      color: themeColors.bodyText,
+                      borderColor: themeColors.subtleText,
+                      backgroundColor: 'rgba(207, 219, 213, 0.08)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.9)';
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.16)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = themeColors.subtleText;
+                      e.currentTarget.style.backgroundColor = 'rgba(207, 219, 213, 0.08)';
+                    }}
+                  >
+                    {skill}
+                  </motion.li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </motion.div>

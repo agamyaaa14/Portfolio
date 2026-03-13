@@ -116,7 +116,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-lg font-poppins" style={{ color: themeColors.subtleText }}>
-            Have a project in mind? Let's work together!
+            Open to conversations, opportunities, collaborations, or just a quick hello.
           </p>
         </motion.div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
               Let's Connect
             </h3>
             <p className="mb-8 font-poppins leading-relaxed" style={{ color: themeColors.subtleText }}>
-              I'm always interested in hearing about new opportunities. Whether you have a question or just want to say hi, I'll do my best to get back to you!
+              I'm always happy to connect. Whether it's about opportunities, collaboration, learning, or questions, I'll do my best to get back to you.
             </p>
             {/* UPDATED: Replaced card layout with a cleaner list design and faster hover effect */}
             <div className="space-y-6">
@@ -175,7 +175,7 @@ const Contact = () => {
               </div>
               <div>
                 <label htmlFor="message" className="block font-medium mb-2 font-poppins" style={{ color: themeColors.headingText }}>Message</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-all duration-300 font-poppins resize-none" style={{ backgroundColor: themeColors.cardBackground, borderColor: '#4a4a4a', color: themeColors.cardText }} placeholder="Tell me about your project..." />
+                <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-all duration-300 font-poppins resize-none" style={{ backgroundColor: themeColors.cardBackground, borderColor: '#4a4a4a', color: themeColors.cardText }} placeholder="Share your message..." />
               </div>
               <motion.button type="submit" disabled={isSubmitting} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full px-8 py-3 rounded-lg font-semibold font-poppins transition-all duration-300 disabled:opacity-50 flex items-center justify-center gap-2" style={{ backgroundColor: themeColors.primary, color: 'white' }}>
                 {isSubmitting ? 'Sending...' : <><Send className="w-5 h-5" /> Send Message</>}

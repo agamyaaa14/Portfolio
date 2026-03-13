@@ -1,7 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, Zap, Database, BarChart3, TrendingUp } from 'lucide-react';
+import { Zap, Database, BarChart3, TrendingUp } from 'lucide-react';
 
 const Experience = () => {
   const [ref, inView] = useInView({
@@ -18,14 +17,30 @@ const Experience = () => {
     timelineLine: '#333533',   // A subtle grey for the timeline
     primary: '#FF006E',
     primaryRgb: '255, 0, 110',
+    ivoryAccent: '#FFF8E1',
   };
 
   const experiences = [
     {
       id: 1,
+      icon: <Database />,
+      company: 'Balfour Beatty Infrastructure Pvt. Ltd',
+      role: 'Data Analytics Intern',
+      workMode: 'Onsite | Bengaluru, Karnataka',
+      duration: 'Nov 2025 – Feb 2026',
+      highlights: [
+        'Worked with large-scale construction datasets across 40+ structured tables to prepare clean, analysis-ready data for Power BI dashboards.',
+        'Used Python to preprocess, validate, and restructure raw operational data for business visualization and reporting.',
+        'Designed Excel templates and VBA macros to automate structured data entry and sheet generation for client-facing workflows.',
+        'Built Power BI dashboards to communicate operational insights and support reporting.',
+      ],
+    },
+    {
+      id: 2,
       icon: <Zap />,
       company: 'Elevate Labs',
       role: 'AI/ML Intern',
+      workMode: 'Remote',
       duration: 'April 2025 – May 2025',
       highlights: [
         'Built production-ready ML models including SVM, K-Means, and Logistic Regression.',
@@ -34,11 +49,12 @@ const Experience = () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       icon: <BarChart3 />,
       company: 'CoLLearn',
       role: 'Sports Analytics Intern',
-      duration: 'January 2025 – March 2025',
+      workMode: 'Remote',
+      duration: 'Jan 2025 – Mar 2025',
       highlights: [
         'Conducted in-depth cricket video and performance analysis to extract key metrics.',
         'Built and maintained comprehensive Tableau dashboards for data visualization.',
@@ -46,11 +62,12 @@ const Experience = () => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       icon: <TrendingUp />,
       company: 'Excelerate',
       role: 'Data Analyst Associate',
-      duration: 'December 2024 – January 2025',
+      workMode: 'Remote',
+      duration: 'Dec 2024 – Jan 2025',
       highlights: [
         'Created and managed insightful dashboards using Google Looker Studio.',
         'Processed and analyzed large datasets with over 20,000 records.',
@@ -110,8 +127,11 @@ const Experience = () => {
 
               <div className="flex flex-col sm:flex-row items-start">
                 <div className="w-full sm:w-1/3 sm:text-right sm:pr-12 mb-4 sm:mb-0">
-                  <p className="text-md font-medium transition-colors duration-300 group-hover:text-white" style={{ color: themeColors.subtleText }}>
+                  <p className="text-md font-medium whitespace-nowrap transition-colors duration-300 group-hover:text-white" style={{ color: themeColors.subtleText }}>
                     {exp.duration}
+                  </p>
+                  <p className="text-sm font-semibold transition-colors duration-300 group-hover:text-white" style={{ color: themeColors.ivoryAccent }}>
+                    {exp.workMode}
                   </p>
                 </div>
                 <div className="w-full sm:w-2/3 sm:pl-12">

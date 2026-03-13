@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink, Award, FileText } from 'lucide-react';
@@ -23,78 +22,101 @@ const Certificates = () => {
   const certificates = [
     {
       id: 1,
-      name: "AWS Generative AI Training",
-      issuer: "Amazon Web Services",
-      date: "Jul 2025",
-      type: "Credly Badge",
-      credlyUrl: "https://www.credly.com/badges/4c36dacd-2612-4653-96bf-40f4b11f7903/public_url",
+      name: "AI Engineer for Data Scientists Associate",
+      issuer: "DataCamp",
+      date: "Feb 22, 2026",
+      type: "Certificate",
+      credlyUrl: "https://drive.google.com/file/d/1XiXxy-deigk4pZg7-xLdBhLaMTcNU3HE/view?usp=sharing",
     },
     {
       id: 2,
-      name: "Prompt Design in Vertex AI",
-      issuer: "Google Cloud",
-      date: "Aug 2025",
-      type: "Credly Badge",
-      credlyUrl: "https://www.credly.com/badges/c165baac-5af1-4a8a-a48b-33d57a717cad/public_url",
-    },
-    {
-      id: 3,
       name: "Associate AI Engineer",
       issuer: "DataCamp",
-      date: "2025",
+      date: "Aug 31, 2025",
       type: "Certificate",
       credlyUrl: "https://drive.google.com/file/d/11nUubUDk8a7ak82V9ULxX53IVqhGX0i2/view?usp=drive_link",
     },
     {
+      id: 3,
+      name: "Prompt Design in Vertex AI",
+      issuer: "Google Cloud",
+      date: "Aug 8, 2025",
+      type: "Credly Badge",
+      credlyUrl: "https://www.credly.com/badges/c165baac-5af1-4a8a-a48b-33d57a717cad/public_url",
+    },
+    {
       id: 4,
-      name: "AI/ML Geo-Data Analysis",
-      issuer: "ISRO",
-      date: "2024",
-      type: "Certificate",
-      credlyUrl: "https://drive.google.com/file/d/1TD7Ko1mKrnXFtVtWjlCHvwZqYEm3m2wu/view?usp=drive_link",
+      name: "AWS Generative AI Training",
+      issuer: "Amazon Web Services",
+      date: "Jul 25, 2025",
+      type: "Credly Badge",
+      credlyUrl: "https://www.credly.com/badges/4c36dacd-2612-4653-96bf-40f4b11f7903/public_url",
     },
     {
       id: 5,
+      name: "Principles of Generative AI",
+      issuer: "Infosys Springboard",
+      date: "June 16, 2025",
+      type: "Certificate",
+      credlyUrl: "https://drive.google.com/file/d/1rdp8ogouCW2xShclJyNwTU1P41X_Rghq/view?usp=drive_link",
+    },
+    {
+      id: 6,
       name: "Intro to Machine Learning",
       issuer: "NPTEL",
-      date: "2024",
+      date: "Nov 20, 2024",
       type: "Certificate",
       credlyUrl: "https://drive.google.com/file/d/1vG3S3lWNcEwEiNn8lkpLdrZBDnmjceqp/view?usp=drive_link",
     },
     {
-      id: 6,
-      name: "Principles of Generative AI",
-      issuer: "Infosys Springboard",
-      date: "2024",
+      id: 7,
+      name: "AI/ML Geo-Data Analysis",
+      issuer: "ISRO",
+      date: "Sept 6, 2024",
       type: "Certificate",
-      credlyUrl: "https://drive.google.com/file/d/1rdp8ogouCW2xShclJyNwTU1P41X_Rghq/view?usp=drive_link",
+      credlyUrl: "https://drive.google.com/file/d/1TD7Ko1mKrnXFtVtWjlCHvwZqYEm3m2wu/view?usp=drive_link",
     }
   ];
 
+  const additionalLearningLinks = [
+    {
+      id: 1,
+      label: 'All Course Certificates (Google Drive Folder)',
+      url: 'https://drive.google.com/drive/folders/1NqzBA5lVG8g5b_wVSBuGYdf1Wpgzihaa?usp=sharing',
+    },
+    {
+      id: 2,
+      label: 'Google Cloud Skills Boost Profile',
+      url: 'https://www.skills.google/public_profiles/3e877606-415f-4e74-8e5b-a99578ff3223',
+      logo: 'https://cdn.simpleicons.org/googlecloud/4285F4',
+      logoAlt: 'Google Cloud logo',
+    },
+  ];
+
   return (
-    <section id="certificates" className="py-20" style={{ backgroundColor: themeColors.background }}>
+    <section id="certificates" className="py-14" style={{ backgroundColor: themeColors.background }}>
       <div ref={ref} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
-          className="text-left mb-16"
+          className="text-left mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-poppins" style={{ color: themeColors.headingText }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 font-poppins" style={{ color: themeColors.headingText }}>
             Certifications
           </h2>
-          <p className="text-lg font-poppins" style={{ color: themeColors.subtleText }}>
+          <p className="text-base font-poppins" style={{ color: themeColors.subtleText }}>
             A history of my professional development and training.
           </p>
         </motion.div>
 
-        {/* Certificates Grid */}
+        {/* Compact Certificate List */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-3"
         >
           {certificates.map((cert, index) => (
             <motion.a
@@ -102,38 +124,84 @@ const Certificates = () => {
               href={cert.credlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.03, borderColor: themeColors.primary }}
-              className="group block p-6 rounded-xl border-2"
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+              transition={{ duration: 0.4, delay: 0.1 + index * 0.06 }}
+              className="group p-3 rounded-lg border flex items-start justify-between gap-3 transition-all duration-300 hover:-translate-y-0.5"
               style={{
                 backgroundColor: themeColors.cardBackground,
-                borderColor: 'transparent',
+                borderColor: '#4A4D4A',
               }}
             >
-              <div className="flex justify-between items-start mb-4">
-                <div className="p-3 rounded-lg" style={{ backgroundColor: '#242423' }}>
+              <div className="flex items-start gap-2.5 min-w-0">
+                <div className="mt-0.5 p-1.5 rounded-md" style={{ backgroundColor: '#242423' }}>
                   {cert.type === 'Credly Badge' ? (
-                    <Award className="w-6 h-6" style={{ color: themeColors.primary }} />
+                    <Award className="w-4 h-4" style={{ color: themeColors.primary }} />
                   ) : (
-                    <FileText className="w-6 h-6" style={{ color: themeColors.primary }} />
+                    <FileText className="w-4 h-4" style={{ color: themeColors.primary }} />
                   )}
                 </div>
-                <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ color: themeColors.primary }}>
-                  <span className="text-sm font-medium">View</span>
-                  <ExternalLink className="w-4 h-4" />
+                <div className="min-w-0">
+                  <h4 className="text-base font-semibold truncate" style={{ color: themeColors.cardHeadingText }}>
+                    {cert.name}
+                  </h4>
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    {cert.issuer === 'Google Cloud' && (
+                      <img
+                        src="https://cdn.simpleicons.org/googlecloud/4285F4"
+                        alt="Google Cloud logo"
+                        className="w-3.5 h-3.5 flex-shrink-0"
+                      />
+                    )}
+                    <p className="text-sm truncate" style={{ color: themeColors.cardBodyText }}>
+                      {cert.issuer} · {cert.date}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold mb-2 leading-tight" style={{ color: themeColors.cardHeadingText }}>
-                {cert.name}
-              </h3>
-              <p className="text-md" style={{ color: themeColors.cardBodyText }}>
-                {cert.issuer} · {cert.date}
-              </p>
+              <div className="flex items-center gap-1 text-sm font-medium" style={{ color: themeColors.primary }}>
+                <span className="hidden sm:inline">View</span>
+                <ExternalLink className="w-4 h-4" />
+              </div>
             </motion.a>
           ))}
+        </motion.div>
+
+        {/* Additional Learning Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-6 p-3.5 rounded-lg border"
+          style={{ backgroundColor: '#D9E3DE', borderColor: '#A9A9A9' }}
+        >
+          <h3 className="text-lg font-bold mb-1" style={{ color: themeColors.headingText }}>
+            Additional Learning Links
+          </h3>
+          <p className="text-xs mb-3" style={{ color: themeColors.subtleText }}>
+            Ongoing learning records and course completion links.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {additionalLearningLinks.map((link) => (
+              <a
+                key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-between gap-2 text-sm font-medium p-2 rounded-md border transition-colors duration-200"
+                style={{ color: themeColors.primary, borderColor: '#A9A9A9', backgroundColor: 'rgba(255, 255, 255, 0.25)' }}
+              >
+                <span className="inline-flex items-center gap-2 min-w-0">
+                  {link.logo && (
+                    <img src={link.logo} alt={link.logoAlt ?? 'Logo'} className="w-4 h-4 flex-shrink-0" />
+                  )}
+                  <span className="truncate">{link.label}</span>
+                </span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
